@@ -2,8 +2,17 @@
 <html>
 	<head>
 		<title>AnnoOtaria - Title of Document 1</title>
-		<link type="text/css" rel="stylesheet" href="../Css/layoutindex.css"/>
-		<script type="text/javascript" src="../Js/index.js"></script>
+		<!--  <link type="text/css" rel="stylesheet" href="../Css/layoutindex.css"/>
+		<script type="text/javascript" src="../Js/index.js"></script> -->
+		<script type="text/javascript" src="../lib/jquery-2.1.3.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="box0">
@@ -21,7 +30,7 @@
 				<div class="lista">
 					<h5>Lista dei documenti</h5>
 					<select class="scroll" multiple>
-						<option ondblclick="fDoc1()">Documento1
+						<option>Documento1
 						<option>Documento2
 						<option>Documento3
 						<option>Documento4
@@ -41,10 +50,11 @@
 			</div>
 			<div class="mainArea">
 				<label>
-					<input type="button" onclick="fDoc1()" value="Documento1" name="Documento1"/>
+					<input type="button" onclick="fDoc1('http://annotaria.web.cs.unibo.it/documents/BMC_Bioinformatics_2008_Oct_1_9_406_ver1.html')" value="Documento1" name="Documento1" />
 					<input type="button" onclick="fDoc7()" value="Documento7" name="Documento7"/>
 					<input type="button" onclick="fDoc21()" value="Documento21" name="Documento21"/>
 				</label>
+				<input type="number" id="sentence" name="sentence" min="0" max="10" value="0">
 				<h2 id="title"></h2>
 				<p id="contenuto"></p>
 			</div>

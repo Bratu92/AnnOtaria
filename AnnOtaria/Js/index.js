@@ -1,3 +1,5 @@
+
+
 function fHelp()
 {
 	alert("Serve aiuto?");
@@ -14,9 +16,22 @@ function fAnnotator()
 	alert("annotati sto cazzo!");
 }
 
-function fDoc1()
+function fDoc1(file)
 {
-	alert("Hai cliccato Documento1");
+	$.ajax({
+		method: 'GET',
+		url: file,
+		success: function(d) {
+			$('#file').html(d)
+			$('#title').html($('#file h1'))
+			var n = $('.sentence').length
+			$('#sentence')[0].max = n
+		},
+		error: function(a,b,c) {
+			alert('Non ho potuto caricare il file '+file)
+		}
+	});
+
 }
 
 function fDoc7()
@@ -30,17 +45,5 @@ function fDoc21()
 }
 
 function load(file) {
-	$.ajax({
-		method: 'GET',
-		url: file,
-		success: function(result) {
-			$('#file').html(result)
-			$('#title').html($('#file h1'))
-			var n = $('.sentence').length
-			$('#sentence')[0].max = n
-		},
-		error: function(a,b,c) {
-			alert('Non ho potuto caricare il file '+file)
-		}
-	});
+	
 }
