@@ -1,49 +1,35 @@
+$(document).ready(main)
 
-
-function fHelp()
-{
-	alert("Serve aiuto?");
+function main() {
+	$.ajax({
+		method: 'GET',
+		url: '../File/indirizzi.json',
+		success: function(d) {
+			alert(d.length);
+			for (var i=0; i<d.length; i++) {
+				$('#list').append("<li><a href='#' onclick='load(\""+d[i].url+"\")'>"+d[i].label+"</a></li>")
+			}	
+		},
+		error: function(a,b,c) {
+			alert('Nessun documento da mostrare')
+		}
+	});
 }
 
-function fAbout()
-{
-	alert("quindi?");
-}
-
-
-function fAnnotator()
-{
-	alert("annotati sto cazzo!");
-}
-
-function fDoc1(file)
-{
+function load(file) {
 	$.ajax({
 		method: 'GET',
 		url: file,
 		success: function(d) {
-			$('#file').html(d)
-			$('#title').html($('#file h1'))
-			var n = $('.sentence').length
-			$('#sentence')[0].max = n
+			$('#contenuto').html(d)
+			$('#title').html($('#contenuto h1'))
+			
 		},
 		error: function(a,b,c) {
 			alert('Non ho potuto caricare il file '+file)
 		}
 	});
-
 }
 
-function fDoc7()
-{
-	alert("Hai cliccato Documento7");
-}
-
-function fDoc21()
-{
-	alert("Hai cliccato Documento21");
-}
-
-function load(file) {
 	
-}
+
