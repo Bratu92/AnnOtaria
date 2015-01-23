@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>AnnoOtaria - Title of Document 1</title>
+		<link type="text/css" rel="stylesheet" href="annotaria.css"/>
+		<script type="text/javascript" src="javasc.js"></script>
+	</head>
+	<body>
+		<div class="box0">
+			<div class="docArea">
+			</div>
+			<div class="menuBar">
+				<input class="menuButton" type="button" onclick="fHelp()" value="Help" name="Help"/>
+				<input class="menuButton" type="button" onclick="fAbout()" value="About" name="About"/>
+				<input class="menuButton" type="button" onclick="fAnnotator()" value="Annotator" name="Annotator"/>
+			</div>
+		</div>
+		
+		<div class="box1">
+			<div class="metaArea">
+				<div class="lista">
+					<h5>Lista dei documenti</h5>
+					<select class="scroll" multiple>
+						<option ondblclick="fDoc1()">Documento1
+						<option>Documento2
+						<option>Documento3
+						<option>Documento4
+						<option>Documento5
+						<option>Documento6
+						<option ondblclick="fDoc7()">Documento7
+						<option>Documento8
+					</select>
+				</div>
+				<div class="proprieta">
+					<h5>Proprieta' del documento</h5>
+					<div class="prop2">
+						<p>Autore...</p>
+						<p>Pubblicazione...</p>
+					</div>
+				</div>
+			</div>
+			<div class="mainArea">
+				<label>
+					<input type="button" onclick="fDoc1()" value="Documento1" name="Documento1"/>
+					<input type="button" onclick="fDoc7()" value="Documento7" name="Documento7"/>
+					<input type="button" onclick="fDoc21()" value="Documento21" name="Documento21"/>
+				</label>
+				<h2>Title of Document1</h2>
+				<h4>by: John Smith, Fred Green, Mary Brown<br>Journal of Random Thoughts, 2012, 1(3), MyPress</h4>
+				<h5>1 Lorem ipsum dolor sit amet, ex adipisci accusata sed.
+				<p>scripta vocibus quo, acque denique...</p><br><br><br><br>
+				<h5>1.1 Iusto laudem repudiare ex usu, ne animal</h5>
+				<p>Cum at maiorum vivendo. Pri...</p>
+			</div>
+		</div>
+	</body>
+</html>
