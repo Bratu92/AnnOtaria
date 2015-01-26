@@ -31,7 +31,9 @@ function load(file) {
 }
 
 $(document).ready(function() {
-    $("#datepicker").datepicker();
+    $("#datepicker").datepicker({    	
+    	DateFormat: 'dd/mm/yy'    	
+    });
     main();
   });
 
