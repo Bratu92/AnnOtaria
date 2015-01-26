@@ -51,3 +51,10 @@
 }
 
 .close:hover { background: #00d9ff; }
+
+#longText{
+	
+	min-height: 132px;
+    min-width: 560px;
+	
+}

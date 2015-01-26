@@ -12,7 +12,8 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<link type="text/css" rel="stylesheet" href="../Css/layoutindex.css"/>
-		<link type="text/css" rel="stylesheet" href="../Css/layoutmodal.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/longTextModal.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/shortTextModal.css"/>
 		<script type="text/javascript" src="../Js/index.js"></script>
 		
 	</head>
@@ -54,14 +55,25 @@
 		
 <!------------------------------------------ MODAL WINDOWS ----------------------------------------------->
 
-		<a href="#openModal">Open Modal</a>
+		<a href="#longTextModal">Open Long Modal</a>
 
-		<div id="openModal" class="modalDialog">
+		<div id="longTextModal" class="modalDialog">
 			<div>
 				<a href="#close" title="Close" class="close">X</a>
-				<h2>Modal Box</h2>
-				<p>This is a sample modal box that can be created using the powers of CSS3.</p>
-				<p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+				<h4>Inserisci testo:</h4>
+				<p><textarea id="longText"></textarea></p>
+			</div>
+		</div>
+		
+		<a href="#openModal0">Open Modal</a>
+
+		<div id="openModal0" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h2>Inserisci il nome</h2>
+				<div>
+					<input type="text" class="form-control" id="nome"  maxlength="80" placeholder="Inserisci il nome..." >
+				</div>
 			</div>
 		</div>
 
