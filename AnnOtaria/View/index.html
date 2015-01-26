@@ -15,6 +15,9 @@
 		<link type="text/css" rel="stylesheet" href="../Css/longTextModal.css"/>
 		<link type="text/css" rel="stylesheet" href="../Css/shortTextModal.css"/>
 		<script type="text/javascript" src="../Js/index.js"></script>
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 		
 	</head>
 	<body>
@@ -42,12 +45,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="mainArea">
-				<label>
-					<input type="button" onclick="fDoc1()" value="Documento1" name="Documento1"/>
-					<input type="button" onclick="fDoc7()" value="Documento7" name="Documento7"/>
-					<input type="button" onclick="fDoc21()" value="Documento21" name="Documento21"/>
-				</label>
+			<div class="mainArea">				
 				<h2 id="title"></h2>
 				<p id="contenuto"></p>
 			</div>
@@ -55,7 +53,7 @@
 		
 <!------------------------------------------ MODAL WINDOWS ----------------------------------------------->
 
-		<a href="#longTextModal">Open Long Modal</a>
+		  <a href="#longTextModal">Open Long Modal</a>
 
 		<div id="longTextModal" class="modalDialog">
 			<div>
@@ -74,6 +72,18 @@
 				<div>
 					<input type="text" class="form-control" id="nome"  maxlength="80" placeholder="Inserisci il nome..." >
 				</div>
+			</div>
+		</div>
+		
+		<a href="#datePicker">Date Picker</a>
+
+		<div id="datePicker" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h1> Inserisci Data </h1>
+				<form>
+				    <input id="datepicker" />
+				</form>
 			</div>
 		</div>
 

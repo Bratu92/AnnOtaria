@@ -81,14 +81,14 @@
 
 .mainArea
 {
-	width: 74%;
-	position: relative;
-	float: left;
-	border: solid;
-	border-width: 1px;
-	min-height: 420px;
-	max-height: 500px;
-	overflow-y: scroll;
+	border: 1px solid;
+    float: left;
+    max-height: 500px;
+    min-height: 420px;
+    overflow-y: scroll;
+    position: relative;
+    top: -141px;
+    width: 973px;
 }
 
 label

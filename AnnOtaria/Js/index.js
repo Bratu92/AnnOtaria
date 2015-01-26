@@ -1,4 +1,3 @@
-$(document).ready(main)
 
 function main() {
 	$.ajax({
@@ -30,6 +29,11 @@ function load(file) {
 		}
 	});
 }
+
+$(document).ready(function() {
+    $("#datepicker").datepicker();
+    main();
+  });
 
 	
 
