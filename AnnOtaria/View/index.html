@@ -86,6 +86,35 @@
 				</form>
 			</div>
 		</div>
+		
+		<a href="#openModal1">Open Modal</a>
+		<div id="openModal1" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h2>Come trovi l'annotazione?</h2>
+				<div>
+					<form id="bootstrapSelectForm" method="post" class="form-horizontal">
+						<div class="form-group">
+							<label class="col-xs-3 control-label">Dai un voto:</label>
+							<div class="col-xs-5 selectContainer">
+								<select name="colors" class="form-control" multiple title="Choose 2-4 colors">
+                					<option value="black">1</option>
+                					<option value="blue">2</option>
+                					<option value="green">3</option>
+                					<option value="orange">4</option>
+                					<option value="red">5</option>
+            					</select>
+        					</div>
+    					</div>
+    					<div class="form-group">
+        					<div class="col-xs-5 col-xs-offset-3">
+        						<button type="submit" class="btn btn-default">Vota!</button>
+        					</div>
+    					</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
 	</body>
 </html>
