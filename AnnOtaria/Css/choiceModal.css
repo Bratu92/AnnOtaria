@@ -1,0 +1,8 @@
+@CHARSET "ISO-8859-1";
+
+.form-control-choice
+{
+	width: 560px;
+    /* Adjust feedback icon position */
+    <!--right: -15px;-->
+}
