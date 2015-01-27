@@ -16,6 +16,7 @@
 		<link type="text/css" rel="stylesheet" href="../Css/shortTextModal.css"/>
 		<link type="text/css" rel="stylesheet" href="../Css/numberModal.css"/>
 		<link type="text/css" rel="stylesheet" href="../Css/choiceModal.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/layoutDBPedia.css"/>
 		
 		<script type="text/javascript" src="../Js/index.js"></script>
 		<script type="text/javascript" src="../Js/jsDBPedia.js"></script>
@@ -26,37 +27,60 @@
 	</head>
 	<body>
 		<div class="box0">
-			<div class="docArea">
-			</div>
-			<div class="menuBar">
-				<input class="menuButton" type="button" onclick="fHelp()" value="Help" name="Help"/>
-				<input class="menuButton" type="button" onclick="fAbout()" value="About" name="About"/>
-				<input class="menuButton" type="button" onclick="fAnnotator()" value="Annotator" name="Annotator"/>
-			</div>
+			
+			    
+			    <img class="imgSinistra" src="../File/otariaSinistra.jpg">
+			    <img class="imgDestra"src="../File/otariaDestra.jpg">
+			
+			<h1>AnnOtaria</h1>
 		</div>
+		<br><br><br>
+		<div class="menuBar">
+		   <table class="tableIndex">
+		   <tr class="rigaIndex">
+	            <td class="cellaIndex"><input class="menuButton" type="button" onclick="fHelp()" value="Home" name="Home"/></td>
+				<td class="cellaIndex"><input class="menuButton" type="button" onclick="fHelp()" value="Help" name="Help"/></td>
+				<td class="cellaIndex"><input class="menuButton" type="button" onclick="fAbout()" value="About" name="About"/></td>
+				
+				
+				<td class="cellaIndex">
+				   <select class="selectpicker">
+				     <option class="menuOption"  onclick="fAnnotator()" >Reader</option>
+				     <option class="menuOption"  onclick="fAnnotator()" >Annotator</option>
+				     
+				   </select>
+				</td>
+				
+		   </tr></table>
+		</div>
+		
 		
 		<div class="box1">
 			<div class="metaArea">
 				<div class="lista">
-					<h5>Lista dei documenti</h5>
+					<label class="titoloArea">Lista dei documenti</label>
 					<ul id="list"></ul>
 				</div>
 				<div class="proprieta">
-					<h5>Proprieta' del documento</h5>
+					<label class="titoloArea">Proprieta' del documento</label>
 					<div class="prop2">
 						<p>Autore...</p>
 						<p>Pubblicazione...</p>
 					</div>
 				</div>
+				<div class="filtri">
+				    <label class="titoloArea">Filtri Annotazione</label>
+				</div>
 			</div>
 			<div class="mainArea">				
 				<h2 id="title"></h2>
-				<p id="contenuto"></p>
+				<p id="contenuto"> Benvenuti su AnnOtaria, un applicazione web per gestire le Annotazioni su documenti di vario tipo</p>
 			</div>
-		</div>
+			</div>
+		
 		
 <!------------------------------------------ MODAL WINDOWS ----------------------------------------------->
-
+<div class="trick">
 		<a href="#longTextModal">Open Long Modal</a>
 		<div id="longTextModal" class="modalDialog">
 			<div>
@@ -150,14 +174,18 @@
 		
 		<a href="#DBpedia">Cerca su DBpedia</a>
 		<div id="DBpedia" class="modalDialog">
-			<div>
-				<a href="#close" title="Close" class="close">X</a>
-				<h4>Cerca su DBPedia:</h4>				
-					<input type="text" name="search" id="userSearch" size="20" />					
-					<input type="submit" name="go" value=" Search " onClick="searchDBPedia()"/>		
-					<div><p id="testo"></p></div>	
+			<div id="dbpedia">
+				
+					<a href="#close" title="Close" class="close">X</a>
+					<h4>Cerca su DBPedia:</h4>				
+						<input type="text" name="search" id="userSearch" size="20" />					
+						<input type="submit" name="go" value=" Search " onClick="searchDBPedia()"/>		
+						<div><p id="testo"></p></div>
+						<div></div>
+				
 			</div>
 			
+		</div>
 		</div>
 
 
