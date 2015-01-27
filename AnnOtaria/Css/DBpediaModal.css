@@ -17,8 +17,9 @@
 	pointer-events: none;
 }
 
-.modalDialog:target 
-{
+
+.modalDialog:target {
+	
 	opacity:1;
 	pointer-events: auto;
 }
