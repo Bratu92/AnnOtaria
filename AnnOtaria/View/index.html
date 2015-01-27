@@ -18,6 +18,7 @@
 		<link type="text/css" rel="stylesheet" href="../Css/choiceModal.css"/>
 		
 		<script type="text/javascript" src="../Js/index.js"></script>
+		<script type="text/javascript" src="../Js/jsDBPedia.js"></script>
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
@@ -147,18 +148,16 @@
 		</div>
 		
 		
-		<a href="#DBpedia">Cerca su Wikipedia</a>
+		<a href="#DBpedia">Cerca su DBpedia</a>
 		<div id="DBpedia" class="modalDialog">
 			<div>
 				<a href="#close" title="Close" class="close">X</a>
-				<h4>Cerca su Wikipedia:</h4>
-				<form action="http://www.wikipedia.org/search-redirect.php" method="get">
-					<input type="text" name="search" size="20" />
-					<input type="hidden" name="language" value="en" />
-					<input type="submit" name="go" value=" > " />
-					<input type="hidden" name="go" value="Go" />
-				</form>
+				<h4>Cerca su DBPedia:</h4>				
+					<input type="text" name="search" id="userSearch" size="20" />					
+					<input type="submit" name="go" value=" Search " onClick="searchDBPedia()"/>		
+					<div><p id="testo"></p></div>	
 			</div>
+			
 		</div>
 
 
