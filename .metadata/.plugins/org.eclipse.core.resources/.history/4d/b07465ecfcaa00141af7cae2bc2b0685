@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>AnnoOtaria - Title of Document 1</title>
+		<script type="text/javascript" src="../lib/jquery-2.1.3.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="../Css/layoutindex.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/longTextModal.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/shortTextModal.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/numberModal.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/choiceModal.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/layoutDBPedia.css"/>
+		
+		<script type="text/javascript" src="../Js/index.js"></script>
+		<script type="text/javascript" src="../Js/get_annotations.js"></script>
+		<script type="text/javascript" src="../Js/jsDBPedia.js"></script>
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		
+	</head>
+	<body>
+		<div class="box0">
+			<img class="imgSinistra" src="../File/otariaSinistra.jpg">
+			<img class="imgDestra"src="../File/otariaDestra.jpg">
+			<h1>AnnOtaria</h1>
+		</div>
+		<br><br><br><br>
+		<div class="menuBar">
+		   <table class="tableIndex">
+		   <tr class="rigaIndex">
+	            <td class="cellaIndex"><input class="menuButton" type="button" onclick="fHelp()" value="Home" name="Home"/></td>
+				<td class="cellaIndex"><input class="menuButton" type="button" onclick="fHelp()" value="Help" name="Help"/></td>
+				<td class="cellaIndex"><input class="menuButton" type="button" onclick="fAbout()" value="About" name="About"/></td>
+				
+				<td class="cellaIndex">
+					<select class="selectpicker" onChange="cambiaModalita()" id="mode" >	<!--  class="apri" id="modedata-target="#login"  -->
+						<option class="menuOption">Reader</option>
+						<option class="menuOption">Annotator</option>
+					</select>		
+				</td>
+				<td class="cellannotator">
+					<p id="userAnnotator"/></p>
+				</td>
+				
+		   </tr></table>
+		</div>
+		
+		<div class="box1"><br>
+			<div class="metaArea">
+				<div class="proprieta">
+					<div class="panel-group" id="accordion">
+          				<div class="panel-heading">
+            				<h1 class="panel-title">
+              					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Lista dei documenti</a>
+            				</h1>
+          				</div>
+          				<div id="collapse1" class="panel-collapse collapse in">
+            				<ul id="list"></ul>
+          				</div>
+          				<div class="panel-heading">
+            				<h1 class="panel-title">
+             					<a data-toggle="collapse" href="#collapse2">Proprieta' del documento</a>
+            				</h1>
+          				</div>
+          				<div id="collapse2" class="panel-collapse collapse">
+            				<div class="panel-body">
+           						COLLASSA!
+          					</div>
+        				</div>
+      				</div> 
+      			</div>
+				
+				<div class="proprieta">
+					<div class="panel-group" id="accordion">
+          				<div class="panel-heading">
+            				<h1 class="panel-title">
+              					<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Cerca annotazioni</a>
+            				</h1>
+          				</div>
+          				<div id="collapse3" class="panel-collapse collapse in">
+          					<div class="panel-body">
+           						<!-- Annotazioni sul documento -->
+								<div id="annDocumento" >
+									<div id="ann_autore" class="annotazioni_doc">
+										<h4>Autore</h4>
+										<ul id="ul_hasAuthor">
+										</ul>
+									</div>
+									<div id="ann_editore" class="annotazioni_doc">
+										<h4>Editore</h4>
+										<ul id="ul_hasPublisher">
+										</ul>
+									</div>
+									<div id="ann_anno" class="annotazioni_doc">
+										<h4>Anno di Publicazione</h4>
+										<ul id="ul_hasPublicationYear">
+										</ul>
+									</div>
+									<div id="ann_titolo" class="annotazioni_doc">
+										<h4>Titolo</h4>
+										<ul id="ul_hasTitle">
+										</ul>
+									</div>
+									<div id="ann_riassunto" class="annotazioni_doc">
+										<h4>Riassunto</h4>
+										<ul id="ul_hasAbstract">
+										</ul>
+									</div>
+									<div id="ann_titoloBreve" class="annotazioni_doc">
+										<h4>Titolo Breve</h4>
+										<ul id="ul_hasShortTitle">
+										</ul>
+									</div>
+									<div id="ann_commento" class="annotazioni_doc">
+										<h4>Commento</h4>
+										<ul id="ul_hasComment">
+										</ul>
+									</div>
+								
+								</div><!--#annotazioni-->
+          					</div>
+          				</div>
+          				<div class="panel-heading">
+            				<h1 class="panel-title">
+             					<a data-toggle="collapse" href="#collapse4">Proprieta' del documento</a>
+            				</h1>
+          				</div>
+          				<div id="collapse4" class="panel-collapse collapse">
+            				<div class="panel-body">
+           						Filtri!
+          					</div>
+        				</div>
+      				</div> 
+      			</div>
+			</div>
+			
+			
+			
+						
+			<div class="mainArea">				
+				<h2 id="title"></h2>
+				<p id="contenuto"> Benvenuti su AnnOtaria, un applicazione web per gestire le Annotazioni su documenti di vario tipo</p>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+<!------------------------------------------ MODAL WINDOWS ----------------------------------------------->
+	<div class="trick">
+		<a href="#longTextModal">Open Long Modal</a>
+		<div id="longTextModal" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h4>Inserisci testo:</h4>
+				<p><textarea id="longText"></textarea></p>
+			</div>
+		</div>
+		
+		<a href="#openModal0">Open Modal</a>
+		<div id="openModal0" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h2>Inserisci il nome</h2>
+				<div>
+					<input type="text" class="form-control" id="nome"  maxlength="80" placeholder="Inserisci il nome..." >
+				</div>
+			</div>
+		</div>
+		
+		
+		<a href="#datePicker">Date Picker</a>
+		<div id="datePicker" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h1> Inserisci Data </h1>
+				<form>
+				    <input id="datepicker" readonly/>
+       				<button type="submit" class="btn btn-default">Inserisci!</button>
+				</form>
+			</div>
+		</div>
+
+		
+		<a href="#openModal1">Number Modal</a>
+		<div id="openModal1" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h2>Come trovi l'annotazione?</h2>
+				<div>
+					<form id="bootstrapSelectForm" method="post" class="form-horizontal">
+						<div class="form-group">
+							<label class="col-xs-3 control-label">Dai un voto:</label>
+							<div class="col-xs-5 selectContainer">
+								<select name="numbers" class="form-control" multiple title="Choose one number">
+                					<option value="one">1</option>
+                					<option value="two">2</option>
+                					<option value="three">3</option>
+                					<option value="four">4</option>
+                					<option value="five">5</option>
+            					</select>
+        					</div>
+    					</div>
+    					<div class="form-group">
+        					<div class="col-xs-5 col-xs-offset-3">
+        						<button type="submit" class="btn btn-default">Vota!</button>
+        					</div>
+    					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		
+		<a href="#choiceModal">Choice Modal</a>
+		<div id="choiceModal" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h2>Scegli un'opzione:</h2>
+				<form id="bootstrapSelectForm" method="post" class="form-horizontal">
+						<div class="form-group">
+							<div class="col-xs-5 selectContainer">
+								<select name="numbers" class="form-control-choice" multiple title="Scegli la stringa">
+                					<option value="string1">stringa1</option>
+                					<option value="string2">stringa2</option>
+                					<option value="string3">stringa3</option>
+                					<option value="string4">stringa4</option>
+                					<option value="string5">stringa5</option>
+            					</select>
+        					</div>
+    					</div>
+    					<div class="form-group">
+        					<div class="col-xs-5 col-xs-offset-3">
+        						<button type="submit" class="btn btn-default">Submit</button>
+        					</div>
+    					</div>
+					</form>
+			</div>
+		</div>
+		
+		
+		<a href="#DBpedia">Cerca su DBpedia</a>
+		<div id="DBpedia" class="modalDialog">
+			<div id="dbpedia">
+				
+					<a href="#close" title="Close" class="close">X</a>
+					<h4>Cerca su DBPedia:</h4>				
+						<input type="text" name="search" id="userSearch" size="20" />					
+						<input type="submit" name="go" value=" Search " onClick="searchDBPedia()"/>		
+						<div><p id="testo"></p></div>
+						<div></div>
+				
+			</div>
+			
+		</div>
+		
+		
+		
+		<a href="#login">Login</a>
+		<div class="modalDialog" id="login">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h4>Esegui il login per passare alla modalità annotator:</h4><br>
+				<div class="inblock">
+					<label>Email:</label>
+					<label>Username:&#160;&#160;</label>
+				</div>
+				<div class="inblock">
+					<input type="text" name="email" id="login_email" size="30" /><br>
+					<input type="text" name="Username" id="login_password" size="30" /><br>
+				</div><br><br><br>
+				<input class="btn btn-default" type="button" value="Login" onclick="log()" data-dismiss="modal"/>
+				<div>
+					<p id="testo"></p></div>
+				</div>
+		</div>
+		
+		
+		
+	</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+C:\Programmi miei\Xampp\Install\inst\htdocs\FinalAnna\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3008458978.index
+3272351039.index
+4137339462.index
+1067110155.index
+1491570051.index

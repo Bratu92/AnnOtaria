@@ -1,0 +1,155 @@
+
+var annotazioni = [];
+var lista_autori = [];
+var docCorrente;	
+var mode=0;			//0 = reader , 1=annotator
+var username;		//prendo l'username quando passo in modalit‡ annotatore
+var email;			//prendo l'email quando passo in modalit‡ annotatore
+
+function main()
+{
+	$.ajax(
+	{
+		method: 'GET',
+		url: '../File/indirizzi.json',
+		success: function(d)
+		{	
+			for (var i=0; i<d.length; i++)
+			{
+				$('#list').append("<li><a href='#' onclick='load(\""+d[i].url+"\",\""+d[i].label+"\")'>"+d[i].label+"</a></li>");
+			}	
+		},
+		error: function(a,b,c)
+		{
+			alert('Nessun documento da mostrare')
+		}
+	});
+}
+
+
+
+function load(url, file)
+{	
+	docCorrente = file;
+	$.ajax(
+	{
+		method: 'GET',
+		url: url,
+		success: function(result)
+		{
+			$('#contenuto').html(result)
+			$('#title').html($('#contenuto h1'));	
+			/*Carica informazioni del documento*/
+			caricaInfoDoc(result, file);			
+			selectAnnotazioniDocumento(file+".html");
+		},
+		error: function(a,b,c)
+		{
+			alert('Non ho potuto caricare il file '+file)
+		}
+	});
+}
+
+$(document).ready(function()
+{
+	$("#datepicker").datepicker(
+	{    	
+		DateFormat: 'dd/mm/yy'    	
+	});
+	main();
+});
+
+/*Carica le informazioni sul documento*/
+function caricaInfoDoc(result, title) 
+{
+	var info = $(result).find(".metadata-group");
+	$('#infoDocumento div.active').hide();
+	$('#infoDocumento div').removeClass("active");
+	$('#infoDocumento').append("<div id='info_"+title+"' class='active'></div>");
+	$('#infoDocumento div.active').show();
+	for (var i=0; i<2; i++) 
+	{
+		 $('#info_'+title).append(info[i]);
+	}
+}
+
+
+
+function cambiaModalita()
+{
+	alert("aperto il cambia modalita");
+	if(mode == 1)	/*Da annotator a reader*/
+	{	
+		alert("partiamo da modalita annotator");
+		$('#mode').attr("data-toggle","");
+		$('#mode').attr("data-target","");
+		var esci = true;
+		if(annotazioniCreate >0)	/*Ci sono annotazioni non salvate, chiedo all'utente cosa vuole fare*/
+		{		
+			esci = confirm('Tornando in modalit&agrave; Reader tutte le annotazioni non salvate andranno perse! Procedere comunque?');
+		}			/*Esco solo nel caso in cui non ci sono annotazioni pendenti, o se l'utente ha dato il consenso*/
+		if(esci == true)
+		{
+			/*Resetto tutto*/
+			utente[ut_nome]= "";
+			utente[ut_email]="";
+			mode = 0;
+			/*$('#gestisci_ann').attr("style","display:none");
+			$('#ann_doc').attr("style","display:none");
+			$('#ann_fram').attr("style","display:none");
+			$('#mode').html("<span>Mode: Reader</span>");
+			testoSelez="";
+			modificaInCorso = 0;
+			$("#bt_eliminaAnnotazioni").trigger("click");*/
+		}
+	}
+	if(mode == 0)
+	{
+		alert("parti da reader e vai in annotator");
+		//$('#mode').attr("data-toggle","modal");
+		$('#mode').attr("data-target","#login");
+	}
+}
+
+
+
+
+function log()
+{
+	{
+		try
+		{
+			alert("dentro il try del controllo login");
+			if(($("#login_nome").val().length == 0))
+			{		/*Controlliamo che sia stato inserito il nome*/
+				throw "Devi inserire il nome";
+				alert("dentro il l'if del nome");
+			}
+			if(($("#login_email").val().length == 0))
+			{		/*Controlliamo che sia stata inserita l'email*/
+				throw "Devi inserire l'email";
+				alert("dentro il l'if dell'email");
+			}
+			/*Se e' tutto ok salviamo i valori e passiamo in modalita'  annotator*/
+			username=($("#login_username").val());
+			email=($("#login_email").val());
+			alert(username);
+			alert(email);
+			mode = 1; /*Passiamo in modalit√  annotatore*/
+			$('#userAnnotator').html("<span><b>"+username+"</b></span>");
+			/*Qui bisogna inserire i comandi dell'annotator*/
+			/*$('#gestisci_ann').attr("style","inline");
+			$('#ann_doc').attr("style","inline");
+			$('#ann_fram').attr("style","inline");
+			$("#login_nome").val("");
+			$("#login_email").val("");*/
+		}	
+		catch(err) 
+		{
+			$("#login_username").val("");
+			$("#login_email").val("");
+			alert(err);
+			alert("qualcosa e' andato storto");
+		}
+	}
+}
