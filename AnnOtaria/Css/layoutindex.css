@@ -232,3 +232,189 @@ td.cellaIndex
 	position: relative;
 	float: right;
 }
+
+/*ANNOTAZIONI FRAMMENTO - COLORI SPAN */
+
+.denotesPerson, .denotesPerson_temp{
+	background:#FF0000;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.denotesPlace, .denotesPlace_temp{
+	background:#FE8504;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.denotesDisease, .denotesDisease_temp{
+	background:#FFCC33;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.hasSubject, .hasSubject_temp{
+	background:#339900;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.relatesTo, .relatesTo_temp{
+	background:#66CC33;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.hasClarityScore, .hasClarityScore_temp{
+	background:#6083b8;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.hasOriginalityScore, .hasOriginalityScore_temp{
+	background:#70A6EF;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.hasFormattingScore, .hasFormattingScore_temp{
+	background:#15D7D9;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.cites, .cites_temp{
+	background:#CC2DDF;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.hasComment, .hasComment_temp{
+	background:#F58EE5;
+	color: #ffffff;
+	cursor:pointer;
+}
+
+.ann_multiple{
+	background:#000000 !important;
+	color: #ffffff !important;
+	border-bottom: 3px solid red !important;
+	border-top: 3px solid red !important;
+	margin-left:-2px !important;
+}
+
+.hasFiltro, .hasFiltroAutore, .hasFiltroData{
+	background: none !important;
+	color: inherit !important;
+	cursor: text !important;
+	border: none !important;
+}
+.visibile{
+	display:block;
+	max-height:100px;
+	overflow:auto;
+}
+
+.nascosto, .nascostoAutore, .nascostoData{
+	display:none;
+}
+
+/*--- Modal annotazioni frammento ---*/
+
+#body_modal_ann_fram{
+	text-align:center;
+}
+
+#rd_ann_fram_persona + span{
+	background:#FF0000;
+	border-radius:3px;
+}
+
+#rd_ann_fram_luogo + span{
+	background:#FE8504;
+	border-radius:3px;
+}
+
+#rd_ann_fram_malattia + span{
+	background:#FFCC33;
+	border-radius:3px;
+}
+
+#rd_ann_fram_argomentoP + span{
+	background:#339900;
+	border-radius:3px;
+}
+
+#rd_ann_fram_dbpedia + span{
+	background:#66CC33;
+	border-radius:3px;
+}
+
+#rd_ann_fram_chiarezza + span{
+	background:#6083b8;
+	border-radius:3px;
+}
+
+#rd_ann_fram_originalita + span{
+	background:#70A6EF;
+	border-radius:3px;
+}
+
+#rd_ann_fram_fep + span{
+	background:#15D7D9;
+	border-radius:3px;
+}
+
+#rd_ann_fram_citazione + span{
+	background:#CC2DDF;
+	border-radius:3px;
+}
+
+#rd_ann_fram_commentoPersonale + span{
+	background:#F58EE5;
+	border-radius:3px;
+}
+
+/*INFO ANNOTAZIONE*/
+
+span.span_mostra_info{
+	cursor:pointer;
+}
+.info_ann_tipo span, .info_ann_documento span, .prop_nome span, .prop_oggetto span, .prop_homep span, .prop_dbepdia span{
+	font-weight: bold;
+	color: #000000;
+
+}
+.finestra_info_ann.in {
+	float:left;
+}
+
+.finestra_info_ann hr {
+  border-top: 1px dotted #f00;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width:50%;
+}
+
+.info_ann_contenuto, .info_ann_frammento, .info_ann_annotator{
+	text-align:center;
+	border:1px solid #DC143C;
+}
+
+.info_ann_contenuto p , .info_ann_frammento p, .info_ann_annotator p{
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #DC143C;
+}
+
+.info_ann_autore, .info_ann_email, .info_ann_data{
+	text-align:left;
+	padding:10px;
+
+}
+
+.info_ann_autore div , .info_ann_email div , .info_ann_data div{
+	float:right;
+	margin-left:10px;
+}

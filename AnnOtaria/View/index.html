@@ -17,6 +17,7 @@
 		<link type="text/css" rel="stylesheet" href="../Css/numberModal.css"/>
 		<link type="text/css" rel="stylesheet" href="../Css/choiceModal.css"/>
 		<link type="text/css" rel="stylesheet" href="../Css/layoutDBPedia.css"/>
+		<link type="text/css" rel="stylesheet" href="../Css/layoutLogin.css"/>
 		
 		<script type="text/javascript" src="../Js/index.js"></script>
 		<script type="text/javascript" src="../Js/get_annotations.js"></script>
@@ -24,6 +25,11 @@
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        <!-- RANGY -->
+		<script src="http://rangy.googlecode.com/svn/trunk/currentrelease/rangy-core.js"> </script>
+		<script src="http://rangy.googlecode.com/svn/trunk/currentrelease/rangy-selectionsaverestore.js"> </script>
+	
+        
 		
 	</head>
 	<body>
@@ -41,7 +47,7 @@
 				<td class="cellaIndex"><input class="menuButton" type="button" onclick="fAbout()" value="About" name="About"/></td>
 				
 				<td class="cellaIndex">
-					<select class="selectpicker" onChange="cambiaModalita()" id="mode" >	<!--  class="apri" id="modedata-target="#login"  -->
+					<select class="selectpicker" onChange="cambiaModalita()" id="mode" >	
 						<option class="menuOption">Reader</option>
 						<option class="menuOption">Annotator</option>
 					</select>		
@@ -267,7 +273,7 @@
 		
 		
 		
-		<a href="#login">Login</a>
+		
 		<div class="modalDialog" id="login">
 			<div>
 				<a href="#close" title="Close" class="close">X</a>
@@ -284,6 +290,11 @@
 				<div>
 					<p id="testo"></p></div>
 				</div>
+		</div>
+		
+		<!-- INFORMAZIONI SULLE ANNOTAZIONI -->
+		<div id="box_ann" class="modal fade">
+		
 		</div>
 		
 		
