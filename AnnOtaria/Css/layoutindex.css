@@ -29,6 +29,12 @@ body
 	display: block;
 }
 
+.span-email{
+	
+	margin-bottom:10px;
+	
+}
+
 .menuButton
 {
 	background-color: black;
