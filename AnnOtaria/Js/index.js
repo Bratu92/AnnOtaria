@@ -1,11 +1,25 @@
 
-var annotazioni = [];
-var lista_autori = [];
-var docCorrente;	
-var mode=0;			//0 = reader , 1=annotator
-var username;		//prendo l'username quando passo in modalità annotatore
-var email;			//prendo l'email quando passo in modalità annotatore
+/**** VARIABILI GLOBALI ****/
+var url_document = '//annotaria.web.cs.unibo.it/documents/';
+var utente = []; /*Contiene nome e email dell'annotatore*/
+var ut_nome = 0 , ut_email = 1;
+var mode; /* 0 -> reader, 1 -> annotator*/
+var testoSelez = ""; /*Testo selezionato per le annotazioni sul frammento*/
+var docCorrente; /*Documento attualmente visualizzato*/
+var annotationType="";/*Tipo di annotazione che l'utente sta creando (hasAuthor, hasPublisher ecc...)*/
+var docOrFrame; /* Che cosa stiamo annotando? 0 -> documento, 1 -> frammento*/
+var annotazioni = [];/*Annotazioni da salvare in fuseki*/
+var annotazioniCreate = 0; /*Numero di annotazioni create (e da salvare)*/
+var selezione; /*Selezione da parte dell'utente*/
+var rangySelection; /*Selezione salvata utilizzando la libreria Rangy*/
+var countAnn = 0;
+var modificaInCorso = 0; /*Sto modificando un annotazione?*/
+var autoreAnnotazioni;
+var rangeObject;
+var annotazioneDaModificare; /*Indice relativo all'annotazione che l'utente vuole modificare*/
+var lista_autori = []; /*Array con gli autori delle annotazioni*/
 var filtri_doc = []; /*Array che contiene la lista dei filtri applicati per le annotazioni sul documento*/
+var annotazioniDoc = new Array ("hasAuthor", "hasPublisher", "hasPublicationYear", "hasTitle", "hasAbstract", "hasShortTitle", "hasComment");
 
 function main()
 {

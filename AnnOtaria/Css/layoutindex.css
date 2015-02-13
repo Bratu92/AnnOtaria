@@ -136,6 +136,13 @@ h1
 	font-weight:bold;
 }
 
+h1.title
+{
+	font-family: cursive;
+	padding: 80px;
+	font-size: 60px;
+}
+
 td p
 {	
 	text-align: center;
@@ -398,14 +405,16 @@ span.span_mostra_info{
 }
 
 .info_ann_contenuto, .info_ann_frammento, .info_ann_annotator{
-	text-align:center;
-	border:1px solid #DC143C;
+	background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 5px;    
+    text-align: center;
 }
 
 .info_ann_contenuto p , .info_ann_frammento p, .info_ann_annotator p{
 	font-weight: bold;
-	color: #ffffff;
-	background-color: #DC143C;
+	color: #000000;
+	background-color: #66ccff;
 }
 
 .info_ann_autore, .info_ann_email, .info_ann_data{
@@ -417,4 +426,64 @@ span.span_mostra_info{
 .info_ann_autore div , .info_ann_email div , .info_ann_data div{
 	float:right;
 	margin-left:10px;
+}
+
+/*--- Modal annotazioni frammento ---*/
+
+#body_modal_ann_fram{
+	text-align:center;
+}
+
+#rd_ann_fram_persona + span{
+	background:#FF0000;
+	border-radius:3px;
+}
+
+#rd_ann_fram_luogo + span{
+	background:#FE8504;
+	border-radius:3px;
+}
+
+#rd_ann_fram_malattia + span{
+	background:#FFCC33;
+	border-radius:3px;
+}
+
+#rd_ann_fram_argomentoP + span{
+	background:#339900;
+	border-radius:3px;
+}
+
+#rd_ann_fram_dbpedia + span{
+	background:#66CC33;
+	border-radius:3px;
+}
+
+#rd_ann_fram_chiarezza + span{
+	background:#6083b8;
+	border-radius:3px;
+}
+
+#rd_ann_fram_originalita + span{
+	background:#70A6EF;
+	border-radius:3px;
+}
+
+#rd_ann_fram_fep + span{
+	background:#15D7D9;
+	border-radius:3px;
+}
+
+#rd_ann_fram_citazione + span{
+	background:#CC2DDF;
+	border-radius:3px;
+}
+
+#rd_ann_fram_commentoPersonale + span{
+	background:#F58EE5;
+	border-radius:3px;
+}
+
+.modal-body {
+    background-color: #f0f8ff; !important    
 }

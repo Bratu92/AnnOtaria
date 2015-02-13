@@ -183,13 +183,14 @@ function creaDiv(id,data,type,span){
 	$("#box_ann").append(s);//Creo il div
 	s = '<div class="modal-dialog"><div class="modal-content">';
 	/*Titolo finestra*/
-	s = s + "<div class=' modal-header'><h3>Informazioni sull' annotazione</h3></div><div class='modal-body'>";
+	s = s + "<div class='modal-body'>";
+	s = s + "<div class='info_ann_contenuto'><p>Informazioni Annotazione </p>";
 	/*Tipo di annotazione*/
 	s = s + "<div class='info_ann_tipo'><span>Tipo Annotazione: </span>" + data.tipo_label + "</div>";
 	/*Documento relativo*/
-	s = s + "<div class='info_ann_documento'><span>Documento: </span>" + docCorrente + "</div>";	
+	s = s + "<div class='info_ann_documento'><span>Documento: </span>" + docCorrente + "</div></div><br>";	
 	/*Contenuto annotazione*/
-	s = s + "<hr></hr><div class='info_ann_contenuto'><p>Oggetto </p>" + data.contenuto + "</div>"; 
+	s = s + "<div class='info_ann_contenuto'><p>Oggetto </p>" + data.contenuto + "</div><br>"; 
 	/*Autore annotazione*/
 	s = s + "<div class='info_ann_annotator'><p>Annotatore </p><div class='info_ann_autore'><span class='glyphicon glyphicon-user'</span><div>" + data.autore + "</div></div>"; 
 	/*Email autore*/
@@ -410,9 +411,4 @@ function showMore(id){
 
 }
 
-/*Crea il div con le informazioni relative all'annotazione
-* @param id: id del div da creare
-* @param data: variabile che contiene i dati da associare al div
-* @param type: tipo di annotazione (1 = frammento, 0 = documento)
-* @param span: span da cui recuperare il contenuto del frammento
-*/
+
