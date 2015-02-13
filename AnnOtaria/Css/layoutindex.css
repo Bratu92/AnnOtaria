@@ -2,22 +2,15 @@
 
 .box0
 {
-	position: relative;
-	width: 100%;
-	height: 100px;
 	display: block;
+    height: 190px;
+    position: relative;
+    width: 100%;
 }
 
 body
 {
 	background-color: #F0F8FF;
-}
-
-#menu{
-
-	position:relative;
-	top: -10px;
-		
 }
 
 .menubar
@@ -27,12 +20,6 @@ body
 	color: white;
 	background-color: black;
 	display: block;
-}
-
-.span-email{
-	
-	margin-bottom:10px;
-	
 }
 
 .menuButton
@@ -55,8 +42,8 @@ select
 
 .box1
 {
-	margin: 10px;
 	display: block;
+    margin: -22px 4px 0 2px;
 }
 
 
@@ -110,26 +97,26 @@ select
 
 .metaArea 
 {
-	position: relative;
-	float:left;
-	margin-top:10px;
-	border-color:#000000;	
+	
+	border-color: #000000;
+    float: left;
+    margin-top: 10px;
+    width: 24%;
+	
 }
 
 .mainArea
 {
-	position: relative;
-	border: 2px solid;
-	border-color:#000000;
-    float: left;
-    padding: 20px;
-    margin-left: 30px;
-    background-color:white;
-    margin-top:25px;
-    width:1000px;
-    height:715px;
-    overflow-y:scroll;
+	
+	background-color: white;
+    border: 2px solid #000000;
     border-radius: 5px;
+    height: 715px;
+    margin-left: 30px;
+    margin-top: 25px;
+    overflow-y: scroll;
+    padding: 20px;
+    width: 75%;
 }
 
 label
@@ -202,7 +189,7 @@ td.cellaIndex
 .trick 
 {
 	margin-top:20px;
-	width:200px;
+	width: 100%;
 }
 
 .titoloArea
