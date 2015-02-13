@@ -3,7 +3,7 @@
 var url_document = '//annotaria.web.cs.unibo.it/documents/';
 var utente = []; /*Contiene nome e email dell'annotatore*/
 var ut_nome = 0 , ut_email = 1;
-var mode; /* 0 -> reader, 1 -> annotator*/
+var mode = 0; /* 0 -> reader, 1 -> annotator*/
 var testoSelez = ""; /*Testo selezionato per le annotazioni sul frammento*/
 var docCorrente; /*Documento attualmente visualizzato*/
 var annotationType="";/*Tipo di annotazione che l'utente sta creando (hasAuthor, hasPublisher ecc...)*/
@@ -67,11 +67,12 @@ function load(url, file)
 
 $(document).ready(function()
 {
+	main();
 	$("#datepicker").datepicker(
 	{    	
 		DateFormat: 'dd/mm/yy'    	
 	});
-	main();
+	
 });
 
 /*Carica le informazioni sul documento*/
@@ -120,9 +121,10 @@ function cambiaModalita()
 	}
 	if(mode == 0)
 	{
+		
 		alert("parti da reader e vai in annotator");
 		//$('#mode').attr("data-toggle","modal");		
-		log();
+		$('#login').modal("show");
 	}
 }
 

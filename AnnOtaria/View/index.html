@@ -43,8 +43,8 @@
 			<img class="imgDestra"src="../File/otariaDestra.jpg">
 			<h1 class="title">AnnOtaria</h1>
 		</div>
-		<br><br><br><br>
-		<div class="menuBar">
+		<br><br><br><br><br>
+		<div class="menuBar" id="menu">
 		   <table class="tableIndex">
 		   <tr class="rigaIndex">
 	            <td class="cellaIndex"><input class="menuButton" type="button" onclick="fHelp()" value="Home" name="Home"/></td>
@@ -279,22 +279,24 @@
 		
 		
 		
-		<div class="modalDialog" id="login">
-			<div>
-				<a href="#close" title="Close" class="close">X</a>
-				<h4>Esegui il login per passare alla modalità annotator:</h4><br>
-				<div class="inblock">
-					<label>Email:</label>
-					<label>Username:&#160;&#160;</label>
-				</div>
-				<div class="inblock">
-					<input type="text" name="email" id="login_email" size="30" /><br>
-					<input type="text" name="Username" id="login_username" size="30" /><br>
-				</div><br><br><br>
+		<div class="modal fade" id="login">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-body">				
+				<div class="info_ann_contenuto">
+				<p>Esegui il login per passare alla modalità annotator:<p>
+				<div class="info_ann_tipo">
+				<span><label>Email:</label><input type="text" name="email" id="login_email" size="30" /><br></span>	
+				<span><label>Username:</label><input type="text" name="Username" id="login_username" size="30" /><br></span>							
+				
+				<br><br><br>
 				<input class="btn btn-default" type="button" value="Login" onclick="log()" data-dismiss="modal"/>
 				<div>
 					<p id="testo"></p></div>
 				</div>
+				</div>				
+				</div>
+		</div>
 		</div>
 		
 		<!-- INFORMAZIONI SULLE ANNOTAZIONI -->

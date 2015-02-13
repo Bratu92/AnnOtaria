@@ -13,6 +13,13 @@ body
 	background-color: #F0F8FF;
 }
 
+#menu{
+
+	position:relative;
+	top: -10px;
+		
+}
+
 .menubar
 {
 	margin-top: 90px;
